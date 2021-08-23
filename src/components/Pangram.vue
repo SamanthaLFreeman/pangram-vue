@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import Vue from "vue";
-import remove from "lodash/remove";
+// import Vue from "vue";
+// import remove from "lodash/remove";
 
 export default {
   name: "pangram",
@@ -44,7 +44,7 @@ export default {
     } 
   },
   methods: {
-    isPangram(sentence) {
+    isPangram() {
       this.isSubmitted = true
     }
   } 
