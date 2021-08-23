@@ -14,7 +14,7 @@
         <div v-if="isSubmitted === false">
           <div class="">
             <label class="label">Pangram</label>
-            <input v-model="form.pangram" class="input" type="text" placeholder="Text input">
+            <input v-model="form.pangram" class="input" type="text" placeholder="Add Sentence here...">
           </div>
         </div>
          <div v-if="isSubmitted === true">
@@ -44,8 +44,9 @@ export default {
     } 
   },
   methods: {
-    isPangram() {
-      this.isSubmitted = true
+    isPangram(sentence) {
+      this.isSubmitted = true;
+      console.log('sentence', sentence);
     }
   } 
 };
