@@ -14,12 +14,12 @@
         <div v-if="isSubmitted === false">
           <div class="">
             <label class="label">Pangram</label>
-            <input v-model="form.pangram" class="input" type="text" placeholder="Text input">
+            <input v-model="form.pangram" class="input" type="text" placeholder="Add Sentence here...">
           </div>
         </div>
-         <div v-if="isSubmitted === true">
-           {{ isPangram(form.pangram) }}
-         </div>
+        <div v-if="isSubmitted === true">
+          {{ isPangram(form.pangram) }}
+        </div>
       </div>
   
       <button v-on:click="isPangram(form.pangram)" type="submit">
@@ -44,8 +44,20 @@ export default {
     } 
   },
   methods: {
-    isPangram() {
-      this.isSubmitted = true
+    isPangram(sentence) {
+      let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+      let missingLetters = [];
+
+      alphabet.forEach(letter => {
+        let lowerCaseSentence = sentence.toLowerCase();
+        if(!lowerCaseSentence.includes(letter)) {
+          missingLetters.push(letter);
+        }
+      })
+
+      this.isSubmitted = true;
+      let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join('')}` : 'Pangram!!!';
+      return message;
     }
   } 
 };
