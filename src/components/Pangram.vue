@@ -10,6 +10,7 @@
         Please also include responsive css styles on this page (this paragraph included) and the output as well, the design is up to you (be creative if you like!). Bonus points for validation and including accessibility.</p>
 
         <p> Vue.js documentation can be found here: <a href="https://vuejs.org/">Vue documentation</a>
+        </p>
         <div v-if="isSubmitted === false">
           <div class="">
             <label class="label">Pangram</label>
