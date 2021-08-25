@@ -22,7 +22,7 @@
         </div>
       </div>
   
-      <button v-on:click="isPangram(form.pangram)" type="submit">
+      <button v-on:click="isPangram(form.pangram)" type="submit" :disabled="!form.pangram">
         <span>submit</span> 
       </button>
     </section>
