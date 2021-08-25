@@ -23,7 +23,7 @@
       </div>
   
       <button v-on:click="checkSubmit(form.pangram)" type="submit" :disabled="!form.pangram">
-        <span>submit</span> 
+        <span>{{this.buttonLabel()}}</span> 
       </button>
     </section>
   </div>
@@ -69,6 +69,10 @@ export default {
     tryAgain() {
       this.isSubmitted = false;
       this.form.pangram = '';
+    },
+    buttonLabel() {
+      let name = this.isSubmitted === true ? 'TRY AGAIN' : 'SUBMIT';
+      return name;
     }
   } 
 };
