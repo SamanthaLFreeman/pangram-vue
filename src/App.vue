@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Vue from "vue"
+// import Vue from "vue"
 import Pangram from "./components/Pangram.vue"
 export default {
   name: 'app',
@@ -26,5 +26,9 @@ export default {
 <style>
 #app {
 
+}
+
+button:disabled:hover {
+  cursor: not-allowed;
 }
 </style>
