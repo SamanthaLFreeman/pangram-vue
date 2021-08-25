@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
-     <img src="">
-     <h1>{{ msg }}</h1>
+  <main id="app">
+    <header>
+      <h1>{{ msg }}</h1>
+    </header>
     <pangram></pangram>
-  </div>
+  </main>
 </template>
 
 <script>
