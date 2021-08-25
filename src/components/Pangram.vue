@@ -22,8 +22,8 @@
         </div>
       </div>
   
-      <button v-on:click="isPangram(form.pangram)" type="submit" :disabled="!form.pangram">
-        <span>submit</span> 
+      <button v-on:click="checkSubmit(form.pangram)" type="submit" :disabled="!form.pangram">
+        <span>{{this.buttonLabel()}}</span> 
       </button>
     </section>
   </div>
@@ -44,6 +44,13 @@ export default {
     } 
   },
   methods: {
+    checkSubmit(sentence) {
+      if(this.isSubmitted) {
+        this.tryAgain();
+      } else {
+        this.isPangram(sentence);
+      }
+    },
     isPangram(sentence) {
       let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
       let missingLetters = [];
@@ -58,6 +65,14 @@ export default {
       this.isSubmitted = true;
       let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join('')}` : 'Pangram!!!';
       return message;
+    },
+    tryAgain() {
+      this.isSubmitted = false;
+      this.form.pangram = '';
+    },
+    buttonLabel() {
+      let name = this.isSubmitted === true ? 'TRY AGAIN' : 'SUBMIT';
+      return name;
     }
   } 
 };
