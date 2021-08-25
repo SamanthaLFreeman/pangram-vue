@@ -3,16 +3,19 @@
     <header>
       <h1>{{ msg }}</h1>
     </header>
-    <pangram></pangram>
+    <instructions />
+    <pangram />
   </main>
 </template>
 
 <script>
 // import Vue from "vue"
+import Instructions from "./components/Instructions.vue"
 import Pangram from "./components/Pangram.vue"
 export default {
   name: 'app',
   components: {
+    Instructions,
     Pangram
   },
   data () {
