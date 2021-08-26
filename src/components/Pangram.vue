@@ -3,20 +3,22 @@
     <form v-if="isSubmitted === false">
       <label class="label">Pangram</label>
       <input 
+        aria-label="sentence input"
         v-model="form.pangram" 
         class="input" 
         type="text" 
         placeholder="Add Sentence here..." >
     </form>
-    <div v-if="isSubmitted === true">
+    <div aria-label="response message" v-if="isSubmitted === true">
       {{ isPangram(form.pangram) }}
     </div>
 
     <button 
+      :aria-label="buttonLabel().toLowerCase()"
       v-on:click="checkSubmit(form.pangram)" 
       type="submit" 
       :disabled="!form.pangram" >
-      <span>{{ this.buttonLabel() }}</span> 
+      <span>{{ buttonLabel() }}</span> 
     </button>
   </section>
 </template>
