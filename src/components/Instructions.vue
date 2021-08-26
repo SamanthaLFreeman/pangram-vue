@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="instructions">
     <p>Pangrams are sentences which use every single letter of the alphabet. ex: “A quick brown fox jumps over the lazy dog.”</p>
     <p>Please fork this project and write a function which determines if the input is a pangram or not. If the input is a pangram return "Pangram!" If it is not, 
     please return the letters of the alphabet that are missing from the sentance. The sentence may include upper or lowercase letters or special characters

@@ -1,23 +1,17 @@
 <template>
-  <div class="app-form">
-    <section class="form">
-      <div class="field">
-        <div v-if="isSubmitted === false">
-          <div class="">
-            <label class="label">Pangram</label>
-            <input v-model="form.pangram" class="input" type="text" placeholder="Add Sentence here...">
-          </div>
-        </div>
-        <div v-if="isSubmitted === true">
-          {{ isPangram(form.pangram) }}
-        </div>
-      </div>
-  
-      <button v-on:click="checkSubmit(form.pangram)" type="submit" :disabled="!form.pangram">
-        <span>{{this.buttonLabel()}}</span> 
-      </button>
-    </section>
-  </div>
+  <section class="pangram">
+    <form v-if="isSubmitted === false">
+      <label class="label">Pangram</label>
+      <input v-model="form.pangram" class="input" type="text" placeholder="Add Sentence here...">
+    </form>
+    <div v-if="isSubmitted === true">
+      {{ isPangram(form.pangram) }}
+    </div>
+
+    <button v-on:click="checkSubmit(form.pangram)" type="submit" :disabled="!form.pangram">
+      <span>{{this.buttonLabel()}}</span> 
+    </button>
+  </section>
 </template>
 
 <script>
