@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <header>
+    <header class="header">
       <h1>{{ msg }}</h1>
     </header>
     <instructions />
@@ -12,6 +12,8 @@
 // import Vue from "vue"
 import Instructions from "./components/Instructions.vue"
 import Pangram from "./components/Pangram.vue"
+import "@fontsource/major-mono-display"
+
 export default {
   name: 'app',
   components: {
@@ -36,16 +38,30 @@ export default {
 }
 
 body {
+  color: #323a45;
   font-family: "Open Sans", sans-serif;
 }
 
 button {
-  border: none;
   cursor: pointer;
   padding: 1em;
 }
 
 button:disabled:hover {
   cursor: not-allowed;
+}
+
+.header {
+  display: flex;
+  background-color: #323a45;
+  height: 15vh;
+  padding-left: 1em;
+}
+
+h1 {
+  align-self: center;
+  color: #fff;
+  font-family: "Major Mono Display", monospace;
+  font-size: 3em;
 }
 </style>
