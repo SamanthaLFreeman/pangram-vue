@@ -3,8 +3,10 @@
     <header class="header">
       <h1>{{ msg }}</h1>
     </header>
-    <instructions />
-    <pangram />
+    <content class="content">
+      <instructions />
+      <pangram />
+    </content>
   </main>
 </template>
 
@@ -49,6 +51,12 @@ button {
 
 button:disabled:hover {
   cursor: not-allowed;
+}
+
+.content {
+  display: flex;
+  padding: 1em;
+  width: 100vw;
 }
 
 .header {
