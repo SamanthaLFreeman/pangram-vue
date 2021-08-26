@@ -1,17 +1,21 @@
 <template>
-  <div id="app">
-     <img src="">
-     <h1>{{ msg }}</h1>
-    <pangram></pangram>
-  </div>
+  <main id="app">
+    <header>
+      <h1>{{ msg }}</h1>
+    </header>
+    <instructions />
+    <pangram />
+  </main>
 </template>
 
 <script>
 // import Vue from "vue"
+import Instructions from "./components/Instructions.vue"
 import Pangram from "./components/Pangram.vue"
 export default {
   name: 'app',
   components: {
+    Instructions,
     Pangram
   },
   data () {
