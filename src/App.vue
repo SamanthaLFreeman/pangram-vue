@@ -28,8 +28,21 @@ export default {
 
 
 <style>
-#app {
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 1em;
 }
 
 button:disabled:hover {
