@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fontsource/major-mono-display": "^4.5.0",
     "require": "^2.4.20",
     "vue": "^3.2.4",
     "vue-loader-v16": "^16.0.0-beta.5.4",
@@ -23,6 +24,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^7.16.0",
+    "sass": "^1.38.1",
+    "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
