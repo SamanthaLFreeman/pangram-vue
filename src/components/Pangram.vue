@@ -2,14 +2,21 @@
   <section class="pangram">
     <form v-if="isSubmitted === false">
       <label class="label">Pangram</label>
-      <input v-model="form.pangram" class="input" type="text" placeholder="Add Sentence here...">
+      <input 
+        v-model="form.pangram" 
+        class="input" 
+        type="text" 
+        placeholder="Add Sentence here..." >
     </form>
     <div v-if="isSubmitted === true">
       {{ isPangram(form.pangram) }}
     </div>
 
-    <button v-on:click="checkSubmit(form.pangram)" type="submit" :disabled="!form.pangram">
-      <span>{{this.buttonLabel()}}</span> 
+    <button 
+      v-on:click="checkSubmit(form.pangram)" 
+      type="submit" 
+      :disabled="!form.pangram" >
+      <span>{{ this.buttonLabel() }}</span> 
     </button>
   </section>
 </template>
