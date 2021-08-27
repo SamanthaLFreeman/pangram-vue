@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource/major-mono-display": "^4.5.0",
+    "jquery": "^3.6.0",
     "require": "^2.4.20",
     "vue": "^3.2.4",
     "vue-loader-v16": "^16.0.0-beta.5.4",
