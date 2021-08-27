@@ -19,7 +19,7 @@ For this take home challenge, I was expected to fork an existing repo from Stack
 
 ### Deployed Link
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vue-roenvl)
+[View on StackBlitz ⚡️](https://stackblitz.com/edit/vue-roenvl)
 
 ### Project Board
 
@@ -30,7 +30,7 @@ For this take home challenge, I was expected to fork an existing repo from Stack
 - Tried to follow the contrast ratio with easy to view color contrast and font size
 - Included more semantic elements and descriptive labels/aria-labels for screen readers
 - Clarify error with specific guidance on what is missing
-- Clear symbols on the pointer showing what can and cannot be selected
+- Clear symbols on the pointer icon showing what can and cannot be selected
 
 ### Tech Stack
 
