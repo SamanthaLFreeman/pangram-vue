@@ -25,7 +25,6 @@ export default {
 }
 
 .instruction {
-  font-size: 1.4em;
   padding: 1em;
 }
 </style>

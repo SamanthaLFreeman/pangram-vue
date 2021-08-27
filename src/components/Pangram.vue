@@ -1,15 +1,20 @@
 <template>
   <section class="pangram">
-    <form v-if="isSubmitted === false">
-      <label class="label">Pangram</label>
-      <input 
+    <form class="pangram-form" v-if="isSubmitted === false">
+      <label class="pangram-label pangram-container">Enter Pangram:</label>
+      <textarea 
         aria-label="sentence input"
         v-model="form.pangram" 
-        class="input" 
+        class="pangram-input pangram-container" 
         type="text" 
-        placeholder="Add Sentence here..." >
+        rows="3"
+        placeholder="Add Sentence here..." />
     </form>
-    <div aria-label="response message" v-if="isSubmitted === true">
+    <div 
+      :class=" isSubmitted ? 'error' : 'success'"
+      class="pangram-resp pangram-container" 
+      aria-label="response message" 
+      v-if="isSubmitted === true" >
       {{ isPangram(form.pangram) }}
     </div>
 
@@ -24,8 +29,7 @@
 </template>
 
 <script>
-// import Vue from "vue";
-// import remove from "lodash/remove";
+import $ from "jquery";
 
 export default {
   name: "pangram",
@@ -39,6 +43,7 @@ export default {
   },
   methods: {
     checkSubmit(sentence) {
+      $(".pangram-resp").css("color", "red");
       if(this.isSubmitted) {
         this.tryAgain();
       } else {
@@ -46,7 +51,7 @@ export default {
       }
     },
     isPangram(sentence) {
-      let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+      let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
       let missingLetters = [];
 
       alphabet.forEach(letter => {
@@ -57,7 +62,7 @@ export default {
       })
 
       this.isSubmitted = true;
-      let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join('')}` : 'Pangram!!!';
+      let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join("")}` : "Pangram!!!";
       return message;
     },
     tryAgain() {
@@ -74,5 +79,37 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.error {
+  color: red;
+}
 
+.pangram {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  padding: 3em;
+  width: 50vw;
+}
+
+.pangram-container {
+  margin: 0 0 10px 0;
+}
+
+.pangram-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.pangram-input {
+  font-size: 1.2em;
+  padding: .5em;
+}
+
+.pangram-label { 
+  font-weight: bold;
+}
+
+// .pangram-resp {
+//   color: #000;
+// }
 </style>

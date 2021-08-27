@@ -42,6 +42,7 @@ export default {
 body {
   color: #323a45;
   font-family: "Open Sans", sans-serif;
+  font-size: 1.4em;
 }
 
 button {
