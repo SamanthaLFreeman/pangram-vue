@@ -81,6 +81,7 @@ export default {
 <style scoped lang="scss">
 .error {
   color: #ff0033;
+  font-size: 1.4em;
 }
 
 .pangram {
