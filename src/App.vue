@@ -70,7 +70,7 @@ button:disabled:hover {
 h1 {
   align-self: center;
   color: #fff;
-  font-family: "Major Mono Display", monospace;
+  font-family: "Major Mono Display", "Andale Mono", monospace;
   font-size: 3em;
 }
 </style>
