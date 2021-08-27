@@ -11,9 +11,9 @@
         placeholder="Add Sentence here..." />
     </form>
     <div 
-      :class=" isSubmitted ? 'error' : 'success'"
-      class="pangram-resp pangram-container" 
       aria-label="response message" 
+      :class=" isCorrect ? 'success' : 'error'"
+      class="pangram-resp pangram-container" 
       v-if="isSubmitted === true" >
       {{ isPangram(form.pangram) }}
     </div>
@@ -29,12 +29,12 @@
 </template>
 
 <script>
-import $ from "jquery";
 
 export default {
   name: "pangram",
   data() {
     return {
+      isCorrect: true,
       isSubmitted: false,
       form : {
         pangram: "",
@@ -43,7 +43,6 @@ export default {
   },
   methods: {
     checkSubmit(sentence) {
-      $(".pangram-resp").css("color", "red");
       if(this.isSubmitted) {
         this.tryAgain();
       } else {
@@ -62,12 +61,13 @@ export default {
       })
 
       this.isSubmitted = true;
-      let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join("")}` : "Pangram!!!";
+      let message = missingLetters.length > 0 ? `Missing Letters: ${missingLetters.join("")}` : "Pangram!";
+      this.isCorrect = message.includes("Pangram!");
       return message;
     },
     tryAgain() {
       this.isSubmitted = false;
-      this.form.pangram = '';
+      this.form.pangram = "";
     },
     buttonLabel() {
       let name = this.isSubmitted === true ? 'TRY AGAIN' : 'SUBMIT';
@@ -80,7 +80,7 @@ export default {
 
 <style scoped lang="scss">
 .error {
-  color: red;
+  color: #ff0033;
 }
 
 .pangram {
@@ -109,7 +109,13 @@ export default {
   font-weight: bold;
 }
 
-// .pangram-resp {
-//   color: #000;
-// }
+.success {
+  font-family: "Major Mono Display", monospace;
+  font-size: 3em;
+}
+
+.pangram-resp {
+  height: 15vh;
+  text-align: center;
+}
 </style>
